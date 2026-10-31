@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<!-- sparkle-sign-warning:
+IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
+-->
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>DiskVista</title>
+        <item>
+            <title>0.3.0</title>
+            <pubDate>Sat, 31 Oct 2026 10:38:06 +0300</pubDate>
+            <sparkle:version>4</sparkle:version>
+            <sparkle:shortVersionString>0.3.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://github.com/suliemanalthwab/DiskVista/releases/download/v0.3.0/DiskVista-macOS.zip" length="3649379" type="application/octet-stream" sparkle:edSignature="Y7XbX34a3n5S7dIruPR39hZQvkd6voejHZSYEluPR2+/TiOuF0wjDV1eCcnKiZ0jq3jMMfqMPA2caBK1JTllCQ=="/>
+        </item>
+    </channel>
+</rss>
+<!-- sparkle-signatures:
+edSignature: A5lDlv85CH+wCYeGNrECbs6NKDdMNcoYi/fzRvQAD723Y4wxr8mSBCdE6p0RZIYXc0L/0UJk3f0FAlxQQ2vMCw==
+length: 1122
+-->
