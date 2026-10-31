@@ -4,7 +4,7 @@ cd "$(dirname "$0")/.."
 swift build -c release
 BIN_DIR="$(swift build -c release --show-bin-path)"
 APP="dist/DiskVista.app"
-./scripts/build-icon.sh
+bash scripts/build-icon.sh
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp Assets/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
 cp "$BIN_DIR/DiskVista" "$APP/Contents/MacOS/DiskVista"
