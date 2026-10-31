@@ -210,6 +210,7 @@ struct ContentView: View {
     @State private var showAbout = false
     @State private var showDevice = false
     @State private var showOther = false
+    @State private var showUpdates = false
     private let palette: [Color] = [.blue, .cyan, .indigo, .purple, .pink, .orange, .teal, .gray]
 
     var entries: [DiskEntry] {
@@ -276,6 +277,7 @@ struct ContentView: View {
         .sheet(isPresented: $showAbout) { AboutView() }
         .sheet(isPresented: $showDevice) { deviceSheet }
         .sheet(isPresented: $showOther) { otherFoldersSheet }
+        .sheet(isPresented: $showUpdates) { UpdateSettingsView() }
         .onChange(of: selectedSector) { _, value in
             guard value != nil, let entry = sector else { return }
             if model.result.groups.contains(where: { $0.id == entry.id }) {
@@ -308,6 +310,7 @@ struct ContentView: View {
             Section("الجهاز") {
                 Button { showAccess = true } label: { Label("فحص القرص بالكامل", systemImage: "internaldrive") }.buttonStyle(.plain).disabled(model.deleting)
                 Button { showDevice = true } label: { Label("معلومات الجهاز والأقراص", systemImage: "desktopcomputer") }.buttonStyle(.plain)
+                Button { showUpdates = true } label: { Label("تحديث التطبيق", systemImage: "arrow.triangle.2.circlepath") }.buttonStyle(.plain)
                 Button { showAbout = true } label: { Label("حول DiskVista", systemImage: "info.circle") }.buttonStyle(.plain)
             }
             Section("الوصول السريع") {
@@ -604,6 +607,7 @@ struct AboutView: View {
         VStack(spacing: 14) {
             Image(nsImage: NSApplication.shared.applicationIconImage).resizable().frame(width: 100, height: 100)
             Text("DiskVista").font(.largeTitle.bold())
+            Text("الإصدار \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "نسخة تطوير")").font(.caption).foregroundStyle(.secondary)
             Text("مساحة جهازك، بوضوح.").foregroundStyle(.secondary)
             Divider()
             Text("فكرة سليمان الثواب").font(.headline)
@@ -616,6 +620,7 @@ struct AboutView: View {
 }
 final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
+        UpdateManager.shared.start()
         if let url = Bundle.main.url(forResource: "AppIcon", withExtension: "icns"), let icon = NSImage(contentsOf: url) {
             NSApplication.shared.applicationIconImage = icon
         }
@@ -628,7 +633,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         WindowGroup { ContentView().sheet(isPresented: $about) { AboutView() } }.defaultSize(width: 1120, height: 880)
             .windowToolbarStyle(.unified)
             .commands {
-                CommandGroup(replacing: .appInfo) { Button("حول DiskVista") { about = true } }
+                CommandGroup(replacing: .appInfo) {
+                    Button("حول DiskVista") { about = true }
+                    UpdateMenuButton()
+                }
             }
     }
 }
