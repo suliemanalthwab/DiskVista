@@ -4,7 +4,7 @@
 
 ## التحميل والصور
 
-[تحميل نسخة macOS (Apple Silicon)](https://github.com/suliemanalthwab/DiskVista/releases/latest) · [تحميل المصدر](https://github.com/suliemanalthwab/DiskVista/archive/refs/heads/main.zip)
+[تحميل نسخة macOS (Apple Silicon)](https://github.com/suliemanalthwab/DiskVista/releases/tag/v0.2.1) · [تحميل المصدر](https://github.com/suliemanalthwab/DiskVista/archive/refs/heads/main.zip)
 
 النسخة الحالية تجريبية، تتطلب macOS 14 أو أحدث، وتحمل توقيعًا محليًا وليست موثّقة لدى Apple بعد. قد يمنع Gatekeeper تشغيلها؛ يمكن بناء التطبيق من المصدر.
 
