@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleExecutable</key><string>DiskVista</string>
+<key>CFBundleIdentifier</key><string>org.diskvista.app</string>
+<key>CFBundleIconFile</key><string>AppIcon.icns</string>
+<key>CFBundleName</key><string>DiskVista</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleShortVersionString</key><string>0.3.0</string>
+<key>CFBundleVersion</key><string>4</string>
+<key>LSMinimumSystemVersion</key><string>14.0</string>
+<key>NSHighResolutionCapable</key><true/>
+<key>SUFeedURL</key><string>https://raw.githubusercontent.com/suliemanalthwab/DiskVista/main/appcast.xml</string>
+<key>SUPublicEDKey</key><string>Ijl0T1xvcgyF8pDG/L4T00zcDpV6ADg2WGqjH1oK7Xg=</string>
+<key>SUEnableAutomaticChecks</key><true/>
+<key>SUAutomaticallyUpdate</key><false/>
+<key>SUEnableSystemProfiling</key><false/>
+<key>SUVerifyUpdateBeforeExtraction</key><true/>
+<key>SURequireSignedFeed</key><true/>
+</dict></plist>
